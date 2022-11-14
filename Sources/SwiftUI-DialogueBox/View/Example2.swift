@@ -79,10 +79,10 @@ public struct CheckmarkExample:View  {
            
         }
         if viewModel.multiSelect {
-            OptionButton(title: "OK", subtitle: nil, image: nil , triggerHandler: nil, shouldDismiss: true, enabled: $viewModel.multiSelectOKButtonEnabled, show: $viewModel.showCheckmarkDialogue)
+            OptionButton(title: "OK", subtitle: nil, image: nil, shouldDismiss: true, enabled: $viewModel.multiSelectOKButtonEnabled, show: $viewModel.showCheckmarkDialogue, triggerHandler: nil)
             
             
-            OptionButton(title: "Cancel", subtitle: nil, accentColor: .red, image: nil,  triggerHandler: nil, shouldDismiss: true, enabled: .constant(true), show: $viewModel.showCheckmarkDialogue)
+            OptionButton(title: "Cancel", subtitle: nil, accentColor: .red, image: nil,  shouldDismiss: true, enabled: .constant(true), show: $viewModel.showCheckmarkDialogue, triggerHandler: nil)
               
         }
         

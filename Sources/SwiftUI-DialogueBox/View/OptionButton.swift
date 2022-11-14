@@ -20,7 +20,7 @@ public struct OptionButton: View {
     let triggerHandler: (()->Void)?
     let shouldDismiss: Bool
     
-    public init(title: String, subtitle: String? = nil, accentColor: Color? = .accentColor, image: Image? = nil, triggerHandler: (() -> Void)? = nil, shouldDismiss: Bool,  enabled: Binding<Bool>, show: Binding<Bool>) {
+    public init(title: String, subtitle: String? = nil, accentColor: Color? = .accentColor, image: Image? = nil,  shouldDismiss: Bool,  enabled: Binding<Bool>, show: Binding<Bool>, triggerHandler: (() -> Void)? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.accentColor = accentColor

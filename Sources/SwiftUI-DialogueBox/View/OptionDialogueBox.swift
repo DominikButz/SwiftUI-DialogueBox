@@ -15,6 +15,8 @@ struct OptionDialogueBox<Header: View, Buttons: View>: View {
     @ViewBuilder var header: ()->Header
     @ViewBuilder var content: ()->Buttons
     
+    let bottomSafeArea = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
+    
     init(dialogueType: DialogueType, frameWidth: CGFloat, settings: OptionDialogueSettings, @ViewBuilder header:  @escaping ()->Header,  @ViewBuilder content: @escaping () -> Buttons) {
         self.dialogueType = dialogueType
         self.frameWidth = frameWidth
@@ -32,7 +34,7 @@ struct OptionDialogueBox<Header: View, Buttons: View>: View {
             content()
    
         }
-        .padding(.bottom, dialogueType == .alert ? settings.alertBottomPadding : settings.sheetBottomPadding)
+        .padding(.bottom, dialogueType == .alert ? settings.alertBottomPadding : settings.sheetBottomPadding + bottomSafeArea)
         .background(background)
             .frame(width:frameWidth)
 

@@ -1,13 +1,14 @@
 # SwiftUI Dialogue Box (v0.1)
 
 ## Features
+
 SwiftUI Dialogue Box is a simple but highly customizable package that can replace Apple's Alert, Sheet and ConfirmationDialog. 
 
 * attach a dialogueBox-modifier to the top view in your view hiearchy to make sure it will always appear on top
 * pass in a custom header or use OptionDialogueDefaultHeader
 * the type property determines if the box should appear as alert in the middle of the screen or from the bottom edge as sheet. 
 * pass in the the default buttons OptionButton or CheckmarkButton or any custom buttons you create
-* create and array of OptionItems or CheckmarkOptionItems in your model and iterate over them in the buttons closure of dialogueBox to create option buttons. Or simply create your own model items.
+* create an array of OptionItems or CheckmarkOptionItems in your model and iterate over them in the buttons closure of dialogueBox to create buttons. Or simply create your own model items.
 * Background effects: set a dim or blur effect 
 * Check out the example project included in this package for more details.
 
@@ -201,6 +202,9 @@ public struct CheckmarkExample:View  {
 
 
 ## Change log
+
+#### [Version 0.1.1](https://github.com/DominikButz/SwiftUI-DialogueBox/releases/tag/0.1.1)
+Minor improvements:  Added bottom area inset padding underneath the buttons of a sheet. triggerHandler is now the last parameter of OptionButton initialiser.
 
 #### [Version 0.1](https://github.com/DominikButz/SwiftUI-DialogueBox/releases/tag/0.1)
 Initial public release.

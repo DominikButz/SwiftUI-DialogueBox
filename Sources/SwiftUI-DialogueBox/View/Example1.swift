@@ -48,7 +48,9 @@ public struct SimpleDialogueExample:View  {
                     Divider()
                     
                     Button(action: {
-                        self.show = true
+                        withAnimation {
+                            self.show = true
+                        }
                     }) {
                         Text(self.dialogueBoxType == .alert ? "Show Alert" : "Show Sheet")
                     }.padding()
@@ -79,7 +81,7 @@ public struct SimpleDialogueExample:View  {
 
             ForEach(items) { item in
                 
-                OptionButton(title: item.title, subtitle: item.subtitle, accentColor: item.tintColor, image: item.image,  triggerHandler: item.triggerHandler, shouldDismiss: item.shouldDismiss, enabled:  .constant(item.enabled), show: $show)
+                OptionButton(title: item.title, subtitle: item.subtitle, accentColor: item.tintColor, image: item.image,  shouldDismiss: item.shouldDismiss, enabled:  .constant(item.enabled), show: $show, triggerHandler: item.triggerHandler)
                  
             }
         
